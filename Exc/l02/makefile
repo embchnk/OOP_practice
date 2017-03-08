@@ -15,7 +15,7 @@ LIBRARYS= -lm
 
 # ustawiamy kompilator
 #CXX=g++
-CXX=clang++-3.5
+#CXX=clang++-3.5
 # ustawiamy flagi do kompilacji
 CXXFLAGS+= -Wall -O0 $(LIBRARYS) $(GXX_FLAGS) -g
 

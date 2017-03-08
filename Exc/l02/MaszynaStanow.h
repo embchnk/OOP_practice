@@ -2,6 +2,7 @@
 #define MaszynaStanow_h
 #include "Stan.h"
 #include <iostream>
+#include <vector>
 
 class Stan;
 
@@ -28,9 +29,8 @@ public:
 
 
 private:
-	Stan** _stanTable;
+	std::vector < Stan* > _stanTable;
 	int _actStan;
-	int _counter;
 
 };
 
