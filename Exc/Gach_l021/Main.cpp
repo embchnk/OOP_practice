@@ -50,7 +50,7 @@ int main ()
   const float numPolish_2 = ((polish)2,789);
   cout<<numEnglish_1<<" "<<numPolish_1<<" "<<numEnglish_2<<" "<<numPolish_2<<"\n";
 
-  /*ComplexNumber staticFirst (1, 2);
+  ComplexNumber staticFirst (1, 2);
   cout<<staticFirst<<"\n";
 
   {
@@ -69,7 +69,7 @@ int main ()
   delete dynamicSecond;
 
   cout<<staticFirst<<" "<<staticSecond<<"\n";
-*/
+
   return 0;
 }
 /*
