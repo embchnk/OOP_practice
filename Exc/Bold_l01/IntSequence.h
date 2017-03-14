@@ -22,6 +22,7 @@ public:
 	int operator++( int );
 	int operator--( int );
 	void operator=( int& ) const;
+	void* operator new( std::size_t );
 	operator int() const;
 
 

@@ -74,3 +74,7 @@ void IntSequence::reset()
 	_current = 0;
 }
 /******************************************************************/
+void* IntSequence::operator new( std::size_t size ){
+	return ::operator new( size );
+}
+/******************************************************************/
