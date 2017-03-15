@@ -23,6 +23,7 @@ public:
 	int operator--( int );
 	void operator=( int& ) const;
 	void* operator new( std::size_t );
+	void* operator new[]( std::size_t );
 	operator int() const;
 
 

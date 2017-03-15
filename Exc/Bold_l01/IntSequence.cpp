@@ -78,3 +78,7 @@ void* IntSequence::operator new( std::size_t size ){
 	return ::operator new( size );
 }
 /******************************************************************/
+void* IntSequence::operator new[]( std::size_t size ){
+	return ::operator new[]( size );
+}
+/******************************************************************/
