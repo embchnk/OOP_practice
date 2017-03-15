@@ -25,7 +25,7 @@ BiVector::const_iterator BiVector::begin(){
 }
 /******************************************************************************/
 BiVector::const_iterator BiVector::end(){
-	return const_iterator( this, 1 );
+	return const_iterator( this, _itrtr_f + _itrtr_b );
 }
 /******************************************************************************/
 int BiVector::operator[]( int index ){
@@ -33,21 +33,18 @@ int BiVector::operator[]( int index ){
 		return _front[ _itrtr_f - index - 1 ];
 	}
 	else if( _itrtr_f )
-		return _back[ index - _itrtr_b ];
+		return _back[ index - _itrtr_f ];
 	return _back[ index ];
 }
 /******************************************************************************/
 int BiVector::const_iterator::operator*(){
 	if( i < _ptr -> _itrtr_f ){
-		i++;
-		return _ptr -> _front[ _ptr -> _itrtr_f - i  ];
+		return _ptr -> _front[ _ptr -> _itrtr_f - i - 1 ];
 	}
 	else if( _ptr -> _itrtr_f ){
-		i++;
-		return _ptr -> _back[ i - _ptr -> _itrtr_b - 1 ];
+		return _ptr -> _back[ i - _ptr -> _itrtr_f ];
 	}
-	i++;
-	return _ptr -> _back[ i - 1 ];
+	return _ptr -> _back[i];
 }
 /******************************************************************************/
 BiVector::const_iterator& BiVector::const_iterator::operator=( const_iterator iter ){
@@ -73,8 +70,8 @@ BiVector::const_iterator::const_iterator( BiVector* ptr, int integ )
 /******************************************************************************/
 bool operator!=( BiVector::const_iterator temp, BiVector::const_iterator temp2 ){
 	if( temp2.i == temp.i )
-		return 1;
-	return 0;
+		return 0;
+	return 1;
 }
 /******************************************************************************/
 
