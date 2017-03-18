@@ -44,7 +44,7 @@ int main ()
 
   pierwsza + 4 + 6;
   cout<<"Pierwsza II: "<<pierwsza<<"\n"; // Pierwsza II: 2 3 5
-/*
+
   pierwsza[0] = 3;
   pierwsza[1] = 2;
   cout<<"Pierwsza III: "<<pierwsza<<"\n"; // Pierwsza III: 3 2 5
@@ -65,7 +65,7 @@ int main ()
   for (Lista::Iterator liczba = suma.poczatek(); liczba != koniec; ++liczba)
     cout <<*liczba<<", ";
   cout<<*suma.koniec()<<"\n";	// 3, 2, 5, 7, 2, 4, 6, 8, 10
-  
+ 
   suma[1] = suma[5] = 33;
   cout<<"Pierwsza V: "<<pierwsza<<"\n"; // Pierwsza V: 3 2 5 7
   cout<<"Przysta II: "<<parzysta<<"\n"; // Przysta II: 2 4 6 8 10
@@ -75,7 +75,7 @@ int main ()
   cout<<"Pierwsza VI: "<<pierwsza<<"\n"; // Pierwsza VI: 3 2 5 7
   cout<<"Przysta III: "<<parzysta<<"\n"; // Przysta III: 3 2 5 7
   cout<<"Suma III: "<<suma<<"\n";	 // Suma III: 3 33 5 7 2 33 6 8 10
-*/
+
 
   return 0;
 }

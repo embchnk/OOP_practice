@@ -10,6 +10,9 @@ public:
 	node* retPtr(){ return _next; }
 	int retVal(){ return _value; }
 	void addPointer( node* );
+
+	node operator=(int);
+	node operator=(node);
 private:
 	node* _next;
 	int _value;	
