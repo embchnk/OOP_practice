@@ -29,6 +29,6 @@ node node::operator=(int toAssign) {
 /*******************************************************/
 node node::operator=(node nodeToAssign) {
 	_value = nodeToAssign._value;
-	return *this;
+	return *this;	
 }
 /*******************************************************/
