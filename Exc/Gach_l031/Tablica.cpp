@@ -38,29 +38,30 @@ int& Tablica::operator()(int index) const {
 Tablica Tablica::operator-(int to_delete) {
 	int i = 0;
 	int temp_table[_counter];
-	while (_table[i] != to_delete && i < _counter)
+	Tablica temp(_table, _counter);
+	while (temp._table[i] != to_delete && i < _counter)
 		i++;
 	if(i == _counter)
 		return *this;
 	copyTable(_table, temp_table, _counter);
-	delete[] _table;
-	_counter--;
-	_table = new int [_counter];
-	for (int j = 0; j < _counter; ++j) {
+	delete[] temp._table;
+	temp._counter--;
+	temp._table = new int [temp._counter];
+	for (int j = 0; j < temp._counter; ++j) {
 		if (j < i)
-			_table[j] = temp_table[j];
+			temp._table[j] = temp_table[j];
 		else
-			_table[j] = temp_table[j + 1];
+			temp._table[j] = temp_table[j + 1];
 
 	}
-	return *this;
+	return temp;
 }
 /********************************************************/
 Tablica Tablica::operator-=(int to_delete) {
 	int i = 0;
 	while (i < _counter) {
 		i++;
-		*this - to_delete;
+		*this = *this - to_delete;
 	}
 	return *this;
 }
@@ -75,5 +76,21 @@ Tablica operator+(const Tablica f_table, const Tablica table) {
 	}
 	Tablica* temp = new Tablica(temp_table, sizeof(temp_table) / sizeof(int));
 	return *temp;
+}
+/********************************************************/
+Tablica Tablica::tylkoPierwszeWystapienia() {
+	int temp[10], j = 0;
+	int table_copy[_counter];
+	for (int i = 0; i < _counter; ++i) 
+		temp[i] = 0;
+	for (int i = 0; i < _counter; ++i) {
+		if (!temp[_table[i]]) {
+			table_copy[j] = _table[i];
+			temp[_table[i]]++;
+			j++;
+		}
+	}
+	Tablica to_return(table_copy, j);
+	return to_return;
 }
 /********************************************************/

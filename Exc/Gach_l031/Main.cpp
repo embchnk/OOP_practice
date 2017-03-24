@@ -76,7 +76,7 @@ int main ()
   cout<<"Trzecia III: "<<trzecia<<"\n"; // Trzecia III: 2, 4, 6, 4, 6, 3, 5
   cout<<"Niepowtarzalna: "<< niepowtarzalna<<"\n"; // Niepowtarzalna: 2, 4, 6, 3, 5
 
-  /*for (Tablica::Iterator liczba = druga->poczatek(); liczba != druga->koniec(); ++liczba)
+  for (Tablica::Iterator liczba = druga->poczatek(); liczba != druga->koniec(); ++liczba)
     *liczba = 0;
   *druga->koniec()=0;
 
@@ -84,7 +84,7 @@ int main ()
   
   delete pierwsza;
   delete druga;
-*/
+
   return 0;
 }
 /*
