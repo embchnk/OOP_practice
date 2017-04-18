@@ -3,7 +3,12 @@
 
 // myException class
 class DivisionByZero: public std::exception {
-	const char* what() const throw () {
+	/* virtual
+	   const char* - return type
+	   const - this method can be even called on const instances of this class
+	   throw() - means that this method will not yield any exception
+	*/
+	virtual const char* what() const throw () {
 		return "Division by zero is not allowed!";
 	}
 };
