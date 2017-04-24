@@ -29,7 +29,7 @@ public:
 		: Postac(age)
 	{}
 
-	void print(std::ostream& out) const {
+	virtual void print(std::ostream& out) const {
 		out << "Kobieta w wieku " << _age << " lat.";
 	}
 };
@@ -40,7 +40,7 @@ public:
 		: Postac(age)
 	{}
 
-	void print(std::ostream& out) const {
+	virtual void print(std::ostream& out) const {
 		out << "Wiek mezczyzny to " << _age << " lat.";
 	}
 };
