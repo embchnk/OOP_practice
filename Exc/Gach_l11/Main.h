@@ -18,16 +18,21 @@ private:
 template <typename T>
 class UniquePointer {
 public:
-	UniquePointer(T *ptr)
-		: _pointer (ptr)
-	{}
+	UniquePointer(T *ptr) {
+		_pointer = ptr;
+	}
+	~UniquePointer() {
+		delete _pointer;
+	}
 	UniquePointer(const UniquePointer<T>& object) 
-		: _pointer (object._pointer)
 	{
+		_pointer = object._pointer;
 		object._pointer = 0;
 	}
 	UniquePointer& operator=(const UniquePointer<T>& object) {
 		if (this != &object) {
+			if (_pointer)
+				delete _pointer;
 			_pointer = object._pointer;
 			object._pointer = 0;
 		}
